@@ -20,10 +20,10 @@ const getCharactersPromise = () => {
       return response.json()
         .then((data) => {
           prettyPrint(data);
-          console.timeEnd('getCharactersPromise');
+          // console.timeEnd('getCharactersPromise');
         });
     })
-  // console.timeEnd('getCharactersPromise');
+  console.timeEnd('getCharactersPromise');
 };
 
 const getCharactersAwait = async () => {

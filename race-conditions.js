@@ -20,21 +20,21 @@ const insertLiDomElement = (data) => {
 }
 
 
-// const init = (numCharacters) => {
-//   for (let i = 1; i < numCharacters; i++) {
-//     getCharacterById(i)
-//       .then(data => insertLiDomElement(data));
-//   }
-// }
-
 const init = (numCharacters) => {
-  const promiseList = []
   for (let i = 1; i < numCharacters; i++) {
-    promiseList.push(getCharacterById(i));
+    getCharacterById(i)
+      .then(data => insertLiDomElement(data));
   }
-  Promise.all(promiseList)
-    .then(responseList => responseList.forEach(data => insertLiDomElement(data)));
 }
+
+// const init = (numCharacters) => {
+//   const promiseList = []
+//   for (let i = 1; i < numCharacters; i++) {
+//     promiseList.push(getCharacterById(i));
+//   }
+//   Promise.all(promiseList)
+//     .then(responseList => responseList.forEach(data => insertLiDomElement(data)));
+// }
 
 // const init = async (numCharacters) => {
 //   for (let i = 1; i < numCharacters; i++) {
